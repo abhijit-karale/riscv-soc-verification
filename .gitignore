@@ -1,0 +1,25 @@
+# QuestaSim / ModelSim
+work/
+transcript
+*.wlf
+*.vstf
+*.log
+modelsim.ini
+
+# Verilator / Icarus / GTKWave
+*.vvp
+*.vcd
+*.gtkw
+obj_dir/
+
+# SymbiYosys / Formal
+formal/*/
+*.sby.log
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+Thumbs.db
+.DS_Store
