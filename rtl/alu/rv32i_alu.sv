@@ -1,4 +1,4 @@
-//=============================================================================
+ //=============================================================================
 // File: rv32i_alu.sv
 // Description: Synthesizable 32-bit Arithmetic Logic Unit (ALU) for RV32I Core.
 // Implements all standard RV32I computational operations and ALU_PASS.
