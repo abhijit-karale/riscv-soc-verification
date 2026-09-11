@@ -18,7 +18,17 @@ A complete, industry-oriented 30-day hardware design and verification repository
 - `rtl/`: Synthesizable SystemVerilog RTL modules.
 - `tb/`: SystemVerilog testbenches, UVM environment, assertions, and golden reference model.
 - `formal/`: Formal verification properties and `.sby` scripts.
-- `docs/`: Architectural specifications and verification plan.
+- `docs/`: Architectural specifications, 30-day roadmap, and verification plan.
 - `sim/`: Simulation logs, artifacts, and build libraries.
 - `waveforms/`: Saved waveform dumps (`.wlf`, `.vcd`).
 - `reports/`: Coverage reports, regression outputs, and formal proofs.
+
+## 30-Day Project Progress Tracker
+See [30-Day Roadmap](file:///docs/roadmap_30days.md) for full phase breakdown.
+
+| Day | Feature | Module / Deliverable | Status | Metric |
+| :---: | :--- | :--- | :---: | :---: |
+| **Day 1** | Architecture & Package | `rtl/common/soc_pkg.sv`, `tb/tests/tb_pkg_sanity.sv` | **PASSED** | Architecture & map validated |
+| **Day 2** | RV32I ALU & SVA | `rtl/alu/rv32i_alu.sv`, `tb/assertions/alu_assertions.sv`, `tb/sv_tb/tb_alu.sv` | **PASSED** | **100%** Coverage, 0 Failures (1,933 vectors) |
+| **Day 3** | Register File (x0-x31) | `rtl/regfile/rv32i_regfile.sv` | *Upcoming* | Dual-read, single-write conflict tests |
+
