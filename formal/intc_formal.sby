@@ -1,0 +1,17 @@
+[options]
+mode bmc
+depth 15
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal soc_pkg.sv
+read -formal intc_apb.sv
+read -formal intc_formal.sv
+prep -top intc_formal
+
+[files]
+rtl/common/soc_pkg.sv
+rtl/peripherals/intc_apb.sv
+formal/intc_formal.sv

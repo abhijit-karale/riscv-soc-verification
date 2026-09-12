@@ -1,5 +1,7 @@
 # QuestaSim / ModelSim
 work/
+sim/work/
+sim/regression_logs/
 transcript
 *.wlf
 *.vstf

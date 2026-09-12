@@ -1,0 +1,32 @@
+// RV32I Diagnostic Test Machine Code Hex Memory Image
+// Format: 32-bit Hex words loaded via $readmemh
+00A00093 // 0x00: ADDI x1, x0, 10
+01400113 // 0x04: ADDI x2, x0, 20
+002081B3 // 0x08: ADD  x3, x1, x2
+10302023 // 0x0C: SW   x3, 0x100(x0)
+10002203 // 0x10: LW   x4, 0x100(x0)
+04419863 // 0x14: BNE  x3, x4, fail (offset 0x58 -> 0x6C)
+400002B7 // 0x18: LUI  x5, 0x40000 (GPIO Base)
+0FF00313 // 0x1C: ADDI x6, x0, 0xFF
+0062A423 // 0x20: SW   x6, 8(x5) (GPIO DIR = 0xFF)
+0A500393 // 0x24: ADDI x7, x0, 0xA5
+0072A223 // 0x28: SW   x7, 4(x5) (GPIO DATA_OUT = 0xA5)
+40001437 // 0x2C: LUI  x8, 0x40001 (UART Base)
+00400493 // 0x30: ADDI x9, x0, 4
+00942823 // 0x34: SW   x9, 16(x8) (UART BAUD = 4)
+00700513 // 0x38: ADDI x10, x0, 7
+00A42623 // 0x3C: SW   x10, 12(x8) (UART CTRL = 7)
+04F00593 // 0x40: ADDI x11, x0, 0x4F ('O')
+00B42023 // 0x44: SW   x11, 0(x8)
+04B00613 // 0x48: ADDI x12, x0, 0x4B ('K')
+00C42023 // 0x4C: SW   x12, 0(x8)
+00A00693 // 0x50: ADDI x13, x0, 0x0A ('\n')
+00D42023 // 0x54: SW   x13, 0(x8)
+CAFEC737 // 0x58: LUI  x14, 0xCAFEC
+ABE70713 // 0x5C: ADDI x14, x14, 0xABE (x14 = 0xCAFEBABE)
+20E02023 // 0x60: SW   x14, 0x200(x0) (Store PASS signature at 0x200)
+0000006F // 0x64: JAL  x0, 0 (Halt Loop)
+DEADC737 // 0x68: LUI  x14, 0xDEADC
+EEF70713 // 0x6C: ADDI x14, x14, 0xEEF (x14 = 0xDEADBEEF)
+20E02023 // 0x70: SW   x14, 0x200(x0)
+0000006F // 0x74: JAL  x0, 0 (Fail Loop)

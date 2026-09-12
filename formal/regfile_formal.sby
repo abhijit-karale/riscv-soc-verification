@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 15
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal rv32i_regfile.sv
+read -formal regfile_formal.sv
+prep -top regfile_formal
+
+[files]
+rtl/regfile/rv32i_regfile.sv
+formal/regfile_formal.sv

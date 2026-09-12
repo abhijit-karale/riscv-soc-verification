@@ -1,0 +1,17 @@
+[options]
+mode bmc
+depth 15
+
+[engines]
+smtbmc boolector
+
+[script]
+read -formal soc_pkg.sv
+read -formal apb_interconnect.sv
+read -formal apb_formal.sv
+prep -top apb_formal
+
+[files]
+rtl/common/soc_pkg.sv
+rtl/bus/apb_interconnect.sv
+formal/apb_formal.sv
